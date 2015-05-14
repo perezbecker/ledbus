@@ -4,7 +4,7 @@ import time
 from predict import predict
 import string
 
-localdir="/home/pi/ledbus/master/"
+localdir="/home/pi/ledbus/"
 
 # List of bus lines/stops to predict.  Use routefinder.py to look up
 # lines/stops for your location, copy & paste results here.  The 4th
