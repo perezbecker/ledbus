@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if ps -ef | grep -v grep | grep nextbus-led.py ; then
+	exit 0
+else
+
+	python /home/pi/ledbus/master/nextbus-led.py > /dev/null 2>&1
+	#python /home/pi/ledbus/master/nextbus-led.py >> /home/pi/ledbus/master/buslog.txt
+	exit 0
+fi
