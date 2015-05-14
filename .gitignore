@@ -1,2 +1,5 @@
 bustimes
 predict.pyc
+buserrors
+buslog.txt
+.DS_Store
