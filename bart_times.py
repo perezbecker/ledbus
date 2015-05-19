@@ -14,3 +14,5 @@ for i in xrange(len(all_predictions)):
         # print all_predictions[i]['estimates'][j]["minutes"]
         times.append(all_predictions[i]['estimates'][j]["minutes"])
     data.append(times)
+
+print data
