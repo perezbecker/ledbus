@@ -10,12 +10,11 @@ localdir="/home/pi/ledbus/"
 # lines/stops for your location, copy & paste results here.  The 4th
 # element on each line can then be edited for brevity if desired.
 stops = [
-( 'actransit', '1', '0305510', 'To Bay Fair BART' ),
-( 'actransit', '1R', '0305510', 'To Bay Fair BART' ),
-( 'actransit', '51B', '0301740', 'To Rockridge BART' ),
-( 'actransit', '1', '0305520', 'To Berkeley BART' ),
-( 'actransit', '1R', '0305520', 'To Downtown Berkeley' ),
-( 'actransit', '51B', '0301730', 'To Berkeley Marina' ),
+( 'sf-muni', 'N', '3915', 'to Downtown' ),
+( 'sf-muni', '6', '5898', 'to Downtown' ),
+( 'sf-muni', 'N', '3912', 'to Wastelands' ),
+( 'sf-muni', '33', '4963', 'to Final del Infinito' ),
+( 'sf-muni', '7', '4720', 'to Downtown' ),
 ]
 
 # Populate a list of predict objects from stops[].  Each then handles
@@ -109,7 +108,7 @@ while (time_since_last_response < 60):
                 t = p - (currentTime - pl.lastQueryTime)
                 print '\t' + str(int(t/60)) + ' minutes'
                 # print '\t' + str(t/60) + ' min'
-                if(ledspot != 100):    #Change to 2 to show information about the second bus in the queue for ledspot number 2. 
+                if(ledspot != 1):
                     if(busorder == 0):
                         
                         if(t<600 and t>=0):
@@ -122,7 +121,7 @@ while (time_since_last_response < 60):
 			else:
                             ledtext=ledtext+str(int(t/60))+bus1_color
                         ledspot=ledspot+1
-                else:   #Code bellow is intended for displaying data of the second bus in the queue
+                else:
                     if(busorder == 1):
                         if(t<600 and t>=0):
                             ledtext=ledtext+str(int(t/60))+LetterTime[int((t%60)/10)]+bus2_color
