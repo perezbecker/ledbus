@@ -1,7 +1,8 @@
 from bart_api import BartApi
 import string
 
-localdir="/home/pi/ledbus/"
+localdir="/mnt/usb/ledlogs/"
+#localdir="/home/pi/ledbus/"
 #localdir="/Users/dperezbecker/hackday/ledbus/"
 
 bart = BartApi()

@@ -1,0 +1,5 @@
+#!/bin/bash
+
+sudo mount /dev/sda1 /mnt/usb
+sleep 60
+sudo python /home/pi/ledbus/off_button.py &

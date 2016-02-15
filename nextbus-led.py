@@ -4,7 +4,9 @@ import time
 from predict import predict
 import string
 
-localdir="/home/pi/ledbus/"
+#localdir="/home/pi/ledbus/"
+localdir="/mnt/usb/ledlogs/"
+
 
 # List of bus lines/stops to predict.  Use routefinder.py to look up
 # lines/stops for your location, copy & paste results here.  The 4th
@@ -166,9 +168,9 @@ while (time_since_last_response < 60):
         #f.write("XXXXXX") # python will convert \n to os.linesep
 	f.close()
     	
-	g = open(localdir+"buserrors",'a')
-	g.write("Time:"+str(time.time())+" last response:"+str(time_since_last_response)+"\n")
-	g.close()
+	#g = open(localdir+"buserrors",'a')
+	#g.write("Time:"+str(time.time())+" last response:"+str(time_since_last_response)+"\n")
+	#g.close()
 
 
     prevTime = currentTime;

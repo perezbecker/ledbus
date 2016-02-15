@@ -4,7 +4,7 @@ if ps -ef | grep -v grep | grep nextbus-led.py ; then
 	exit 0
 else
 
-	python /home/pi/ledbus/nextbus-led.py > /dev/null 2>&1
+	sudo python /home/pi/ledbus/nextbus-led.py > /dev/null 2>&1
 	#python /home/pi/ledbus/nextbus-led.py >> /home/pi/ledbus/buslog.txt
 	exit 0
 fi
