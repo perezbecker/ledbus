@@ -12,12 +12,12 @@ localdir="/mnt/usb/ledlogs/"
 # lines/stops for your location, copy & paste results here.  The 4th
 # element on each line can then be edited for brevity if desired.
 stops = [
-( 'charles-river', 'morning', 'cambbroo', 'Inbound-North Station' ), #EZ shuttle Mornings, Erie St. Stop
-( 'mbta', '64', '1118', 'Kendall/MIT' ), #64 stop Magazine/Putnam, towards Kendall/MIT
-( 'mbta', '47', '1812', 'Central Square' ), #47 stop Brookline/Putnam, towards Central Square
-( 'mbta', '747', '21772', 'Sullivan (Limited Stops)' ), #CT2 Amesbury/Vassar, towards Kendall/MIT
+( 'actransit', '1', '0305510', 'To Bay Fair BART' ),
+( 'actransit', '1R', '0305510', 'To Bay Fair BART' ),
+( 'actransit', '51B', '0301740', 'To Rockridge BART' ),
+( 'actransit', '1', '0305520', 'To Berkeley BART' ),
+( 'actransit', '1R', '0305520', 'To Downtown Berkeley' ),
 ( 'actransit', '51B', '0301730', 'To Berkeley Marina' ),
-( 'mbta', '47', '1763', 'Broadway' ), #47 stop Magazine/Allston, towards Boston
 ]
 
 # Populate a list of predict objects from stops[].  Each then handles
