@@ -1,7 +1,7 @@
 
 from datetime import datetime
 import time
-from abc import ABC, abstractmethod
+import abc
 
 import stops_full
 
@@ -25,18 +25,20 @@ def get_color_based_on_integer(value):
         return "w"
 
 
-class BaseStop(ABC):
+class BaseStop(object):
+    __metaclass__ = abc.ABCMeta
+
     def __init__(self, stop):
         self.stop = stop
         self.age_prediction = None
         self.formatted_display_output=None
 
-    @abstractmethod
+    @abc.abstractmethod
     def update_predictions(self):
         """Update predictions for the stop."""
         pass
 
-    @abstractmethod
+    @abc.abstractmethod
     def refresh_predictions(self):
         """Refresh predictions for the stop."""
         pass
@@ -189,7 +191,7 @@ def create_transit_mode(stop):
     elif api == "blue_bikes":
         return BlueBikesStation(stop)
     else:
-        raise ValueError(f"Unknown API type: {api}")
+        raise ValueError("Unknown API type: "+str(api))
 
 
 all_stops = stops_full.stops
