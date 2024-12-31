@@ -4,6 +4,6 @@ if ps -ef | grep -v grep | grep text-example ; then
 	exit 0
 else
 
-	(while :; do echo "$(cat /mnt/usb/ledlogs/bustimes /mnt/usb/ledlogs/barttimes | tr -d "\n")"; sleep 2; done) | sudo /home/pi/ledbus/rpi-rgb-led-matrix/text-example -f /home/pi/ledbus/rpi-rgb-led-matrix/fonts/5x8.bdf -c 2 -r 16 -C 0,200,0
+	(while :; do echo "$(cat /mnt/usb/ledlogs/predictions | tr -d "\n")"; sleep 2; done) | sudo /home/pi/ledbus/rpi-rgb-led-matrix/text-example -f /home/pi/ledbus/rpi-rgb-led-matrix/fonts/5x8.bdf -c 2 -r 16 -C 0,200,0
 	exit 0
 fi

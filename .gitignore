@@ -1,6 +1,8 @@
 bustimes
 barttimes
-predict.pyc
 buserrors
 buslog.txt
-.DS_Store
+sounds
+stops.py
+stops_full.py
+__pycache__
