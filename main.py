@@ -56,6 +56,9 @@ class MbtaStop:
         """
         Calculates the time until departure in seconds.
         """
+        if departure_time is None:
+            return float('-inf')
+        
         now = datetime.now()
         return (departure_time - now).total_seconds()
 
@@ -79,7 +82,9 @@ class MbtaStop:
 
         fractional_minute_display = ["A", "B", "C", "D", "E", "F"]
 
-        if next_departure_in_seconds < 0:
+        if next_departure_in_seconds == float('-inf'):
+            following_departure_text = "  " 
+        elif next_departure_in_seconds < 0:
             following_departure_text = "<0"
         elif 0 <= next_departure_in_seconds < 600:
             following_departure_text = str(int(next_departure_in_seconds / 60))+fractional_minute_display[int((next_departure_in_seconds % 60) / 10)]
