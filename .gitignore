@@ -6,3 +6,4 @@ sounds
 stops.py
 stops_full.py
 __pycache__
+*.pyc

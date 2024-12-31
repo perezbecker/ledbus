@@ -82,7 +82,7 @@ class MbtaStop:
         if next_departure_in_seconds < 0:
             following_departure_text = "<0"
         elif 0 <= next_departure_in_seconds < 600:
-            following_departure_text = f"{int(next_departure_in_seconds / 60)}{fractional_minute_display[int((next_departure_in_seconds % 60) / 10)]}"
+            following_departure_text = str(int(next_departure_in_seconds / 60))+fractional_minute_display[int((next_departure_in_seconds % 60) / 10)]
         elif 600 <= next_departure_in_seconds < 5940:
             following_departure_text = str(int(next_departure_in_seconds / 60))
         elif next_departure_in_seconds >= 5940:
@@ -96,7 +96,8 @@ class MbtaStop:
         """
         String representation for debugging.
         """
-        return f"MbtaStop(name={self.stop['name']}, id={self.stop['stop_id']}, formatted_departure={self.formatted_departure_time})"
+        return "MbtaStop(name={}, id={}, formatted_departure={})".format(
+        self.stop['name'], self.stop['stop_id'], self.formatted_departure_time)
 
 
 
@@ -112,7 +113,7 @@ while True:
         else:
             transit_mode.refresh_predictions()
 
-        text_to_display.append(transit_mode.formatted_departure_time)
+        text_to_display = text_to_display+transit_mode.formatted_departure_time
         print(transit_mode)
     f = open(localdir+"predictions","w")
     f.write(text_to_display+"\n")
