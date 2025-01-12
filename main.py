@@ -276,13 +276,12 @@ def create_transit_mode(stop):
     elif api == "blue_bikes":
         return BlueBikesStation(stop)
     elif api == "ez_ride_schedule":
-        return EzRideStop(stop)
-    
+        return EzRideStop(stop) 
     else:
         raise ValueError("Unknown API type: "+str(api))
 
 
-all_stops = stops_full.stops
+all_stops = stops.stops
 
 transit_mode_objects = [create_transit_mode(stop) for stop in all_stops]
 
