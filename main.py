@@ -288,7 +288,7 @@ transit_mode_objects = [create_transit_mode(stop) for stop in all_stops]
 while True:
     text_to_display=""
     for transit_mode in transit_mode_objects:
-        if transit_mode.age_prediction is not None and transit_mode.age_prediction < 30:
+        if (transit_mode.age_prediction is not None and transit_mode.age_prediction < 30) or (transit_mode.formatted_display_output == "<0"):
             transit_mode.update_predictions()
         else:
             transit_mode.refresh_predictions()
