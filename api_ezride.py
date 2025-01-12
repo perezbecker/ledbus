@@ -51,7 +51,7 @@ def get_ezride_departures(stop_id):
             )
             parsed_departure_times.append(dt_time)
         except ValueError as ve:
-            print(f"Error parsing time '{time_str}': {ve}")
+            print("Error parsing time: {}".format(ve))
 
     # Filter out times in the past, then sort
     departure_times = [t for t in parsed_departure_times if t >= now]
